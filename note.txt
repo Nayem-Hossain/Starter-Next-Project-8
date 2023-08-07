@@ -1,0 +1,56 @@
+Overall description of folder structure in this starter project:
+
+# .next:
+=> This is a generated directory (by using the command "npm run dev" or "npm run build") that contains the output of the next.js build process. It includes compiled code, cached pages, and other build artifacts.
+
+# node_modules: 
+=> It contains all the third-party packages (dependencies library files) used in the project.
+   We can't modify anything in this directory manually, as it is managed by npm or yarn.
+
+# public: 
+=> This folder contains static assets that are publicly accessible, such as images, fonts, icons, etc.
+   Anything in this directory can be accessed by prefixing the URL with "/".
+
+# src:
+=> Generally src directory used to organized the code in case of large application in next.js.
+
+# app:
+=> The main directory for next.js application code, containing layout/ and page/ subdirectories. By default, components inside app are React Server Components.
+
+# globals.css:
+=> This files contains all the CSS styles that enables globally.
+
+# app/layout.js:
+=> It's a starting file of the entire application. It's also called the top most layout or root layout component, which wraps around all pages in our application.
+   We can also use this component to handle global state, authentication, theming, and more. 
+   This root layout component name must be app/layout.js or app/layout.tsx.
+
+   Note That: 
+   (i) A layout is UI that is shared between multiple pages. On navigation, layouts preserve state, remain interactive, and do not re-render.
+   (ii) Layouts in a route are nested by default. Each parent layout wraps child layouts below it using the React children prop. Passing data between a parent layout and its children is not possible.
+   (iii) Only the root layout can contain <html> and <body> tags.
+   (iv) We can use layout component to set up common elements such as navigation, footer, etc.
+
+# app/page.js:
+=> It's a default page component of the entire application. The page.js file in the app folder corresponds to the / route of our application, which is the home page or the landing page.
+   
+   Note That:
+   (i) Pages are Server Components by default but can be set to a Client Component by using 'use client'.
+   (ii) A page is UI that is unique to a route in next.js application.
+   (iii) The page.js file is a convension that is used to make route segments publicly accessible. 
+         That is, if a directory does not contains the corresponding page.js file, we can't access it publicly. Therefore, page.js file is required to make a route segment publicly accessible.
+
+# .gitignore:
+=> In this file, we specify which files or directories should be ignored by Git. Such as .next/, node_modules/, .env, etc.
+
+# next.config.js:
+=> In this file, we configure next.js options and plugins.
+
+# package.json:
+=>The package.json file specifies project details (i.e., name, version), scripts, and dependencies of our application.
+
+# package-lock.json:
+=> It contains the details of the dependencies that we installed in node_modules directory.
+
+# README.md:
+=> This is where we write documentation for our project.
